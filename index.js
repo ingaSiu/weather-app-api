@@ -1,3 +1,4 @@
+import connectDB from './database/db.js';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
@@ -17,8 +18,10 @@ app.get('/', (req, res) => {
   res.send('Welcome to the Weather tracker API');
 });
 
-app.listen(port, () => {
+app.listen(port, async () => {
   console.log(`Weather tracker API is running on port ${port}`);
+
+  await connectDB();
 });
 
 export default app;
