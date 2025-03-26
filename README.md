@@ -3,6 +3,17 @@
 This is an api created specifically for weather-app task. 
 
 This API provides weather forecasts for various cities in Lithuania. 
+It logs user actions performed in UI for selected city: 
+- Actions are logged in console and saved to MongoDB as an object:
+  Example:
+```
+    {
+      method: 'GET',
+      url: '/forecast/vilnius',
+      params: { city: 'vilnius' },
+      date: 2025-03-26T09:22:55.410Z
+    }
+```
 
 ## Installation
 
