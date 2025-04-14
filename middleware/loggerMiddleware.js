@@ -1,6 +1,7 @@
 import Log from '../models/Log.js';
 
 const loggerMiddleware = async (req, res, next) => {
+  const isDBEnabled = process.env.DB_ENABLED;
   const logObj = {
     method: req.method,
     url: req.url,
@@ -9,10 +10,12 @@ const loggerMiddleware = async (req, res, next) => {
   };
   console.log(logObj);
 
-  try {
-    await Log.create(logObj);
-  } catch (error) {
-    console.error('Error saving log:', error);
+  if (isDBEnabled === 'true') {
+    try {
+      await Log.create(logObj);
+    } catch (error) {
+      console.error('Error saving log:', error);
+    }
   }
 
   next();
