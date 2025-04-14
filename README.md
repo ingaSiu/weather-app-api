@@ -42,6 +42,9 @@ To run this project locally, follow these steps:
 - MONGO_URI=<your-mongodb-connection-string>
 - DB_ENABLED=true|false
 
+To run project locally without connection to DB you don't need to set up .env file. 
+If there is need to use DB, then Mongo DB URI is needed in .env file for connection with db.
+
 5.  **Start the application:**:
 
 ```bash
