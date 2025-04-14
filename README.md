@@ -1,11 +1,13 @@
 # Weather Tracker API
 
-This is an api created specifically for weather-app task. 
+This is an api created specifically for weather-app task.
 
-This API provides weather forecasts for various cities in Lithuania. 
-It logs user actions performed in UI for selected city: 
+This API provides weather forecasts for various cities in Lithuania.
+It logs user actions performed in UI for selected city:
+
 - Actions are logged in console and saved to MongoDB as an object:
   Example:
+
 ```
     {
       method: 'GET',
@@ -20,25 +22,31 @@ It logs user actions performed in UI for selected city:
 To run this project locally, follow these steps:
 
 1. **Clone the repository**:
-      ```bash
+   ```bash
    git clone https://github.com/ingaSiu/weather-app-api.git
    ```
-2.**Navigate to the project directory:**
-  ```bash
-   cd weather-app-api
+   2.**Navigate to the project directory:**
    ```
+
+```bash
+ cd weather-app-api
+```
+
 3. **Install dependencies**:
    ```bash
    npm install
    ```
-4.**Create a .env file in the root directory and provide the following environment variables:**
-  - PORT=<your-desired-port-number>
-  - MONGO_URI=<your-mongodb-connection-string>
-  
+   4.**Create a .env file in the root directory and provide the following environment variables:**
+
+- PORT=<your-desired-port-number>
+- MONGO_URI=<your-mongodb-connection-string>
+- DB_ENABLED=true|false
+
 5.  **Start the application:**:
-   ```bash
-   npm run dev
-   ```
+
+```bash
+npm run dev
+```
 
 # API Endpoints
 
@@ -51,7 +59,7 @@ Get a list of available cities in Lithuania.
     Method: GET
 
     Response: Returns a list of cities.
-    
+
 ## GET /api/weather/forecast/:city
 
 Fetch the long-term weather forecast for a specific city.
@@ -61,4 +69,3 @@ Fetch the long-term weather forecast for a specific city.
     Method: GET
 
     Response: Returns weather forecast data for the specified city.
-
